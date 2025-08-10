@@ -1,8 +1,8 @@
 
 
 """
-Example on page 81 of David Barber's book Bayesian Reasoning and Machine Learning
-=================================================================================
+Example on page 81 of `David Barber's book Bayesian Reasoning and Machine Learning <http://web4.cs.ucl.ac.uk/staff/D.Barber/textbook/090310.pdf>`_
+==================================================================================================================================================
 
 """
 
@@ -102,6 +102,7 @@ ve.neighbors = [f4]
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 m_a = va.marginal()
+print(f"message passing: p(a)={m_a}")
 
 #%%
 # Computer marginal of a by brute force
@@ -130,10 +131,11 @@ for i, a in enumerate(domain_a):
                 for e in domain_e:
                     total += pabcde(a=a, b=b, c=c, d=d, e=e)
     bf_m_a[i] = total
+print(f"brute force: p(a)={bf_m_a}")
 
 #%%
-# Report agreement between message passing and brute force marginals
-# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+# Test agreement between message passing and brute force marginals
+# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 tol = 1e-6
 
