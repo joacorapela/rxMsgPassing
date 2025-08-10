@@ -1,8 +1,8 @@
 
 
 """
-Example on page 81 of David Barber's book Bayesian Reasoning and Machine Learning
-=================================================================================
+Example on page 81 of `David Barber's book Bayesian Reasoning and Machine Learning <http://web4.cs.ucl.ac.uk/staff/D.Barber/textbook/090310.pdf>`_
+==================================================================================================================================================
 
 """
 
@@ -132,8 +132,8 @@ for i, a in enumerate(domain_a):
     bf_m_a[i] = total
 
 #%%
-# Report agreement between message passing and brute force marginals
-# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+# Test agreement between message passing and brute force marginals
+# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 tol = 1e-6
 
