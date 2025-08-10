@@ -102,6 +102,7 @@ ve.neighbors = [f4]
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 m_a = va.marginal()
+print(f"message passing: p(a)={m_a}")
 
 #%%
 # Computer marginal of a by brute force
@@ -130,6 +131,7 @@ for i, a in enumerate(domain_a):
                 for e in domain_e:
                     total += pabcde(a=a, b=b, c=c, d=d, e=e)
     bf_m_a[i] = total
+print(f"brute force: p(a)={bf_m_a}")
 
 #%%
 # Test agreement between message passing and brute force marginals

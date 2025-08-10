@@ -195,12 +195,13 @@ Link factor nodes to variable nodes
 Computer marginal of a by message passing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-106
+.. GENERATED FROM PYTHON SOURCE LINES 103-107
 
 .. code-block:: Python
 
 
     m_a = va.marginal()
+    print(f"message passing: p(a)={m_a}")
 
 
 
@@ -219,16 +220,17 @@ Computer marginal of a by message passing
     Computed msg from factor f2 to variable vb: [0.374 0.626]
     Computed msg from variable vb to factor f1: [0.374 0.626]
     Computed msg from factor f1 to variable va: [0.1496 0.1374 0.2748 0.4382]
+    message passing: p(a)=[0.1496 0.1374 0.2748 0.4382]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 107-109
+.. GENERATED FROM PYTHON SOURCE LINES 108-110
 
 Computer marginal of a by brute force
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. GENERATED FROM PYTHON SOURCE LINES 109-134
+.. GENERATED FROM PYTHON SOURCE LINES 110-136
 
 .. code-block:: Python
 
@@ -256,20 +258,27 @@ Computer marginal of a by brute force
                     for e in domain_e:
                         total += pabcde(a=a, b=b, c=c, d=d, e=e)
         bf_m_a[i] = total
+    print(f"brute force: p(a)={bf_m_a}")
 
 
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    brute force: p(a)=[0.1496, 0.1374, 0.2748, 0.4381999999999999]
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-137
+
+.. GENERATED FROM PYTHON SOURCE LINES 137-139
 
 Test agreement between message passing and brute force marginals
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. GENERATED FROM PYTHON SOURCE LINES 137-146
+.. GENERATED FROM PYTHON SOURCE LINES 139-148
 
 .. code-block:: Python
 
