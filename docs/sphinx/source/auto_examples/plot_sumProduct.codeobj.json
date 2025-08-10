@@ -1,0 +1,722 @@
+{
+ "a": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "int64"
+  }
+ ],
+ "b": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "int64"
+  }
+ ],
+ "bf_m_a": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
+ "c": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "int64"
+  }
+ ],
+ "d": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "int64"
+  }
+ ],
+ "domain_a": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "domain_b": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "domain_c": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "domain_d": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "domain_e": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "e": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "int64"
+  }
+ ],
+ "f1": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "FactorNode"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "FactorNode"
+  }
+ ],
+ "f1.neighbors": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "FactorNode.neighbors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "FactorNode.neighbors"
+  }
+ ],
+ "f1_probabilities": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "f1_varNames": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
+ "f2": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "FactorNode"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "FactorNode"
+  }
+ ],
+ "f2.neighbors": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "FactorNode.neighbors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "FactorNode.neighbors"
+  }
+ ],
+ "f2_probabilities": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "f2_varNames": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
+ "f3": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "FactorNode"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "FactorNode"
+  }
+ ],
+ "f3.neighbors": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "FactorNode.neighbors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "FactorNode.neighbors"
+  }
+ ],
+ "f3_probabilities": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "f3_varNames": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
+ "f4": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "FactorNode"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "FactorNode"
+  }
+ ],
+ "f4.neighbors": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "FactorNode.neighbors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "FactorNode.neighbors"
+  }
+ ],
+ "f4_probabilities": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "f4_varNames": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
+ "f5": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "FactorNode"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "FactorNode"
+  }
+ ],
+ "f5.neighbors": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "FactorNode.neighbors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "FactorNode.neighbors"
+  }
+ ],
+ "f5_probabilities": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "f5_varNames": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
+ "i": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "int"
+  }
+ ],
+ "m_a": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "np.arange": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "arange"
+  }
+ ],
+ "np.array": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "array"
+  }
+ ],
+ "paGb": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "paGb.shape": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "tuple"
+  }
+ ],
+ "pabcde": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  }
+ ],
+ "pbGcd": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "pbGcd.shape": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "tuple"
+  }
+ ],
+ "pc": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "pd": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "peGd": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "peGd.shape": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "tuple"
+  }
+ ],
+ "rxMsgPassing.sumProduct.FactorNode": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "FactorNode"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "FactorNode"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "FactorNode"
+  }
+ ],
+ "rxMsgPassing.sumProduct.VariableNode": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "VariableNode"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "VariableNode"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "VariableNode"
+  }
+ ],
+ "tol": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "float"
+  }
+ ],
+ "total": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "float"
+  }
+ ],
+ "va": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "VariableNode"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "VariableNode"
+  }
+ ],
+ "va.marginal": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "VariableNode.marginal"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "VariableNode.marginal"
+  }
+ ],
+ "va.neighbors": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "VariableNode.neighbors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "VariableNode.neighbors"
+  }
+ ],
+ "vb": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "VariableNode"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "VariableNode"
+  }
+ ],
+ "vb.neighbors": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "VariableNode.neighbors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "VariableNode.neighbors"
+  }
+ ],
+ "vc": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "VariableNode"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "VariableNode"
+  }
+ ],
+ "vc.neighbors": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "VariableNode.neighbors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "VariableNode.neighbors"
+  }
+ ],
+ "vd": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "VariableNode"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "VariableNode"
+  }
+ ],
+ "vd.neighbors": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "VariableNode.neighbors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "VariableNode.neighbors"
+  }
+ ],
+ "ve": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "VariableNode"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "VariableNode"
+  }
+ ],
+ "ve.neighbors": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing.sumProduct",
+   "module_short": "rxMsgPassing.sumProduct",
+   "name": "VariableNode.neighbors"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "rxMsgPassing",
+   "module_short": "rxMsgPassing",
+   "name": "VariableNode.neighbors"
+  }
+ ]
+}
