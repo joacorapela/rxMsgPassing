@@ -1,2 +1,6 @@
 *~
 *.swp
+__pycache__
+docs/sphinx/build
+docs/sphinx/source/auto_examples/*
+docs/sphinx/source/sg_execution_times.rst
