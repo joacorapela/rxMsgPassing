@@ -18,8 +18,8 @@
 .. _sphx_glr_auto_examples_plot_sumProduct.py:
 
 
-Example on page 81 of `David Barber's book Bayesian Reasoning and Machine Learning <http://web4.cs.ucl.ac.uk/staff/D.Barber/textbook/090310.pdf>`_
-==================================================================================================================================================
+Example in Figure 5.3 of `David Barber's book Bayesian Reasoning and Machine Learning <http://web4.cs.ucl.ac.uk/staff/D.Barber/textbook/090310.pdf>`_
+=====================================================================================================================================================
 
 .. GENERATED FROM PYTHON SOURCE LINES 10-12
 
@@ -310,7 +310,7 @@ Test agreement between message passing and brute force marginals
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.014 seconds)
+   **Total running time of the script:** (0 minutes 0.020 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_sumProduct.py:

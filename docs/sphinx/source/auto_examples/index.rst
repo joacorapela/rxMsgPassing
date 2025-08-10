@@ -14,7 +14,7 @@ Reactive Message Passing Examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Example on page 81 of David Barber&#x27;s book Bayesian Reasoning and Machine Learning">
+    <div class="sphx-glr-thumbcontainer" tooltip="Example in Figure 5.3 of David Barber&#x27;s book Bayesian Reasoning and Machine Learning">
 
 .. only:: html
 
@@ -25,7 +25,7 @@ Reactive Message Passing Examples
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Example on page 81 of David Barber's book Bayesian Reasoning and Machine Learning</div>
+      <div class="sphx-glr-thumbnail-title">Example in Figure 5.3 of David Barber's book Bayesian Reasoning and Machine Learning</div>
     </div>
 
 

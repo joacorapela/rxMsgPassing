@@ -1,8 +1,8 @@
 
 
 """
-Example on page 81 of `David Barber's book Bayesian Reasoning and Machine Learning <http://web4.cs.ucl.ac.uk/staff/D.Barber/textbook/090310.pdf>`_
-==================================================================================================================================================
+Example in Figure 5.3 of `David Barber's book Bayesian Reasoning and Machine Learning <http://web4.cs.ucl.ac.uk/staff/D.Barber/textbook/090310.pdf>`_
+=====================================================================================================================================================
 
 """
 

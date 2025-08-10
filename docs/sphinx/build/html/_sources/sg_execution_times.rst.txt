@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:00.014** total execution time for 1 file **from all galleries**:
+**00:00.020** total execution time for 1 file **from all galleries**:
 
 .. container::
 
@@ -33,5 +33,5 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_auto_examples_plot_sumProduct.py` (``../../../examples/sphinx_gallery/plot_sumProduct.py``)
-     - 00:00.014
+     - 00:00.020
      - 0.0
