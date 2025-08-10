@@ -1,1 +1,1 @@
-# Code developed while learning about reactive message passing
+# Code developed while learning reactive message passing
