@@ -1,5 +1,7 @@
 ﻿name: docs
 on: [push, pull_request, workflow_dispatch]
+permissions:
+    contents: write  # Allow pushing to gh-pages
 jobs:
   docs:
     runs-on: ubuntu-latest
