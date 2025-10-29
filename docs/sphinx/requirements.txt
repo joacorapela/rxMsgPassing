@@ -1,5 +1,6 @@
 numpy
 plotly
+packaging>=21.0
 sphinx>=5
 sphinx-gallery
 matplotlib
