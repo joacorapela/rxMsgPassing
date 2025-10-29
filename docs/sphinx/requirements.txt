@@ -1,5 +1,5 @@
 numpy
 plotly
-sphinx
+sphinx>=5
 sphinx-gallery
 matplotlib
