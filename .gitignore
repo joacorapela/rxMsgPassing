@@ -1,5 +1,6 @@
 *~
 *.swp
+*.egg-info
 __pycache__
 docs/sphinx/build
 docs/sphinx/source/auto_examples/*
