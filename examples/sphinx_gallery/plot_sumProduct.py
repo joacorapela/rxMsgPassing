@@ -4,6 +4,79 @@
 Example in Figure 5.3 of `David Barber's book Bayesian Reasoning and Machine Learning <http://web4.cs.ucl.ac.uk/staff/D.Barber/textbook/090310.pdf>`_
 =====================================================================================================================================================
 
+Calculate the marginal probability mass function p(a) from the joint pmf
+represented in the figure below, with the conditional pmf given in the
+following tables.
+
+.. figure:: /_static/fig5_3_BRML.png
+   :width: 800
+   :alt: fig 5.3 BRML
+
+   p(a,b,c,d,e)=p(a|b) p(b|c,d) p(e|d) p(c) p(d)
+
+.. table:: Variable's dimensions
+
+   ==== ====
+   Var  Dim
+   ==== ====
+   a    4
+   b    2
+   c    2
+   d    3
+   e    5
+   ==== ====
+
+.. table:: p(a|b)
+
+   ==== ==== ====
+   a\\\\b  0    1
+   ==== ==== ====
+   0    0.4  0.0
+   1    0.2  0.1
+   2    0.4  0.2
+   3    0.0  0.7
+   ==== ==== ====
+
+.. table:: p(b|c,d)
+
+   +--------+-----+-----+-----+-----+-----+-----+
+   | b\\\\c   |  0  |  1  |  0  |  1  |  0  |  1  |
+   +========+=====+=====+=====+=====+=====+=====+
+   | 0      | 0.8 | 0.5 | 0.7 | 0.3 | 0.9 | 0.2 |
+   +--------+-----+-----+-----+-----+-----+-----+
+   | 1      | 0.2 | 0.5 | 0.3 | 0.7 | 0.1 | 0.9 |
+   +--------+-----+-----+-----+-----+-----+-----+
+   | d      | 0   | 0   | 1   | 1   | 2   | 2   |
+   +--------+-----+-----+-----+-----+-----+-----+
+
+.. table:: p(e|d)
+
+   ==== ==== ==== ====
+   e\\\\d  0    1    2
+   ==== ==== ==== ====
+   0    0.1  0.7  0.0
+   1    0.1  0.3  0.0
+   2    0.2  0.0  0.0
+   3    0.3  0.0  0.0
+   4    0.3  0.0  1.0
+   ==== ==== ==== ====
+
+.. table:: p(c)
+
+   ==== ==== ====
+   c    0    1
+   ==== ==== ====
+   \    0.2  0.8
+   ==== ==== ====
+
+.. table:: p(d)
+
+   ==== ==== ==== ====
+   d    0    1    2
+   ==== ==== ==== ====
+   \    0.1  0.3  0.6
+   ==== ==== ==== ====
+
 """
 
 #%%
@@ -11,6 +84,7 @@ Example in Figure 5.3 of `David Barber's book Bayesian Reasoning and Machine Lea
 # ^^^^^^^^^^^^^^^^^^^^^^^^
 
 import numpy as np
+import plotly.graph_objects as go
 import rxMsgPassing.sumProduct
 
 
@@ -98,7 +172,7 @@ vd.neighbors = [f2, f4, f5]
 ve.neighbors = [f4]
 
 #%%
-# Computer marginal of a by message passing
+# Compute marginal of a by message passing
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 m_a = va.marginal()
@@ -132,6 +206,19 @@ for i, a in enumerate(domain_a):
                     total += pabcde(a=a, b=b, c=c, d=d, e=e)
     bf_m_a[i] = total
 print(f"brute force: p(a)={bf_m_a}")
+
+#%%
+# Plot marginals computed by message passing and brute force
+# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+fig = go.Figure()
+trace = go.Bar(y=m_a, name="Message Passing")
+fig.add_trace(trace)
+trace = go.Bar(y=bf_m_a, name="Brute Force")
+fig.add_trace(trace)
+fig.update_xaxes(title="x")
+fig.update_yaxes(title="p(a=x)")
+fig
 
 #%%
 # Test agreement between message passing and brute force marginals
