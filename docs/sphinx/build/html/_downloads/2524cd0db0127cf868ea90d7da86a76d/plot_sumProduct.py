@@ -8,7 +8,7 @@ Calculate the marginal probability mass function p(a) from the joint pmf
 represented in the figure below, with the conditional pmf given in the
 following tables.
 
-.. figure:: /_static/fig5_3_BRML.png
+.. figure:: /images/fig5_3_BRML.png
    :width: 800
    :alt: fig 5.3 BRML
 
