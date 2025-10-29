@@ -348,6 +348,256 @@
    "name": "list"
   }
  ],
+ "fig": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly.graph_objs._figure",
+   "module_short": "plotly.graph_objs",
+   "name": "Figure"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly.graph_objs",
+   "module_short": "plotly.graph_objs",
+   "name": "Figure"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly",
+   "module_short": "plotly",
+   "name": "Figure"
+  }
+ ],
+ "fig.add_trace": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly.graph_objs._figure",
+   "module_short": "plotly.graph_objs",
+   "name": "Figure.add_trace"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly.graph_objs",
+   "module_short": "plotly.graph_objs",
+   "name": "Figure.add_trace"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly",
+   "module_short": "plotly",
+   "name": "Figure.add_trace"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly.basedatatypes",
+   "module_short": "plotly.basedatatypes",
+   "name": "BaseFigure.add_trace"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly",
+   "module_short": "plotly",
+   "name": "BaseFigure.add_trace"
+  }
+ ],
+ "fig.update_xaxes": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly.graph_objs._figure",
+   "module_short": "plotly.graph_objs",
+   "name": "Figure.update_xaxes"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly.graph_objs",
+   "module_short": "plotly.graph_objs",
+   "name": "Figure.update_xaxes"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly",
+   "module_short": "plotly",
+   "name": "Figure.update_xaxes"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly.basedatatypes",
+   "module_short": "plotly.basedatatypes",
+   "name": "BaseFigure.update_xaxes"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly",
+   "module_short": "plotly",
+   "name": "BaseFigure.update_xaxes"
+  }
+ ],
+ "fig.update_yaxes": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly.graph_objs._figure",
+   "module_short": "plotly.graph_objs",
+   "name": "Figure.update_yaxes"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly.graph_objs",
+   "module_short": "plotly.graph_objs",
+   "name": "Figure.update_yaxes"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly",
+   "module_short": "plotly",
+   "name": "Figure.update_yaxes"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly.basedatatypes",
+   "module_short": "plotly.basedatatypes",
+   "name": "BaseFigure.update_yaxes"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly",
+   "module_short": "plotly",
+   "name": "BaseFigure.update_yaxes"
+  }
+ ],
+ "go.Bar": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "plotly.graph_objs._bar",
+   "module_short": "plotly.graph_objs",
+   "name": "Bar"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "plotly.graph_objs",
+   "module_short": "plotly.graph_objs",
+   "name": "Bar"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "plotly",
+   "module_short": "plotly",
+   "name": "Bar"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "plotly.basedatatypes",
+   "module_short": "plotly.basedatatypes",
+   "name": "BaseTraceType"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "plotly",
+   "module_short": "plotly",
+   "name": "BaseTraceType"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "plotly.basedatatypes",
+   "module_short": "plotly.basedatatypes",
+   "name": "BaseTraceHierarchyType"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "plotly",
+   "module_short": "plotly",
+   "name": "BaseTraceHierarchyType"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "plotly.basedatatypes",
+   "module_short": "plotly.basedatatypes",
+   "name": "BasePlotlyType"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "plotly",
+   "module_short": "plotly",
+   "name": "BasePlotlyType"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly.graph_objects",
+   "module_short": "plotly.graph_objects",
+   "name": "Bar"
+  }
+ ],
+ "go.Figure": [
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "plotly.graph_objs._figure",
+   "module_short": "plotly.graph_objs",
+   "name": "Figure"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "plotly.graph_objs",
+   "module_short": "plotly.graph_objs",
+   "name": "Figure"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "plotly",
+   "module_short": "plotly",
+   "name": "Figure"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "plotly.basedatatypes",
+   "module_short": "plotly.basedatatypes",
+   "name": "BaseFigure"
+  },
+  {
+   "is_class": true,
+   "is_explicit": false,
+   "module": "plotly",
+   "module_short": "plotly",
+   "name": "BaseFigure"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly.graph_objects",
+   "module_short": "plotly.graph_objects",
+   "name": "Figure"
+  }
+ ],
  "i": [
   {
    "is_class": false,
@@ -541,6 +791,29 @@
    "module": "builtins",
    "module_short": "builtins",
    "name": "float"
+  }
+ ],
+ "trace": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly.graph_objs._bar",
+   "module_short": "plotly.graph_objs",
+   "name": "Bar"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly.graph_objs",
+   "module_short": "plotly.graph_objs",
+   "name": "Bar"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "plotly",
+   "module_short": "plotly",
+   "name": "Bar"
   }
  ],
  "va": [

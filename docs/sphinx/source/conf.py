@@ -14,7 +14,9 @@ author = 'Joaquin Rapela'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
+    'sphinx.ext.autodoc',
     'sphinx_gallery.gen_gallery',
+    'sphinx.ext.viewcode'
 ]
 
 templates_path = ['_templates']

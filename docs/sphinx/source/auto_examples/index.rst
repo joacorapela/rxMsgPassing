@@ -14,7 +14,7 @@ Reactive Message Passing Examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Example in Figure 5.3 of David Barber&#x27;s book Bayesian Reasoning and Machine Learning">
+    <div class="sphx-glr-thumbcontainer" tooltip="Calculate the marginal probability mass function p(a) from the joint pmf represented in the figure below, with the conditional pmf given in the following tables.">
 
 .. only:: html
 
