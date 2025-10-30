@@ -21,89 +21,183 @@
 Example in Figure 5.3 of `David Barber's book Bayesian Reasoning and Machine Learning <http://web4.cs.ucl.ac.uk/staff/D.Barber/textbook/090310.pdf>`_
 =====================================================================================================================================================
 
-Calculate the marginal probability mass function p(a) from the joint pmf
-represented in the figure below, with the conditional pmf given in the
-following tables.
+
+**Task.** Compute the marginal PMF :math:`p(a)` for the model
+
+.. math::
+
+   p(a,b,c,d,e) \;=\; p(a\mid b)\; p(b\mid c,d)\; p(e\mid d)\; p(c)\; p(d).
+
+Use the factor graph in :numref:`fig-brml-53` and the factor tables in
+:numref:`tab-var-dim`–:numref:`tab-pd`. Report a normalized :math:`p(a)`.
+
+.. _fig-brml-53:
 
 .. figure:: /images/fig5_3_BRML.png
-   :width: 800
-   :alt: fig 5.3 BRML
+   :width: 100%
+   :alt: Factor graph for variables a, b, c, d, e (BRML Fig. 5.3)
 
-   p(a,b,c,d,e)=p(a|b) p(b|c,d) p(e|d) p(c) p(d)
+   Factor graph for the model.
 
-.. table:: Variable's dimensions
+.. _tab-var-dim:
 
-   ==== ====
-   Var  Dim
-   ==== ====
-   a    4
-   b    2
-   c    2
-   d    3
-   e    5
-   ==== ====
+.. list-table:: Variable dimensions
+   :header-rows: 1
+   :align: left
 
-.. table:: p(a|b)
+   * - Var
+     - Dim
+   * - a
+     - 4
+   * - b
+     - 2
+   * - c
+     - 2
+   * - d
+     - 3
+   * - e
+     - 5
 
-   ==== ==== ====
-   a\\b  0    1
-   ==== ==== ====
-   0    0.4  0.0
-   1    0.2  0.1
-   2    0.4  0.2
-   3    0.0  0.7
-   ==== ==== ====
+.. _tab-pab:
 
-.. table:: p(b|c,d)
+.. list-table:: Conditional PMF :math:`p(a\mid b)`
+   :header-rows: 1
+   :align: left
 
-   +--------+-----+-----+-----+-----+-----+-----+
-   | b\\c   |  0  |  1  |  0  |  1  |  0  |  1  |
-   +========+=====+=====+=====+=====+=====+=====+
-   | 0      | 0.8 | 0.5 | 0.7 | 0.3 | 0.9 | 0.2 |
-   +--------+-----+-----+-----+-----+-----+-----+
-   | 1      | 0.2 | 0.5 | 0.3 | 0.7 | 0.1 | 0.9 |
-   +--------+-----+-----+-----+-----+-----+-----+
-   | d      | 0   | 0   | 1   | 1   | 2   | 2   |
-   +--------+-----+-----+-----+-----+-----+-----+
+   * - :math:`a\backslash b`
+     - 0
+     - 1
+   * - 0
+     - 0.4
+     - 0.0
+   * - 1
+     - 0.2
+     - 0.1
+   * - 2
+     - 0.4
+     - 0.2
+   * - 3
+     - 0.0
+     - 0.7
 
-.. table:: p(e|d)
+.. _tab-pbcd-0:
 
-   ==== ==== ==== ====
-   e\\d  0    1    2
-   ==== ==== ==== ====
-   0    0.1  0.7  0.0
-   1    0.1  0.3  0.0
-   2    0.2  0.0  0.0
-   3    0.3  0.0  0.0
-   4    0.3  0.0  1.0
-   ==== ==== ==== ====
+.. list-table:: Conditional PMF :math:`p(b\mid c,d{=}0)`
+   :header-rows: 1
+   :align: left
 
-.. table:: p(c)
+   * - :math:`b\backslash c`
+     - 0
+     - 1
+   * - 0
+     - 0.8
+     - 0.5
+   * - 1
+     - 0.2
+     - 0.5
 
-   ==== ==== ====
-   c    0    1
-   ==== ==== ====
-   \    0.2  0.8
-   ==== ==== ====
+.. _tab-pbcd-1:
 
-.. table:: p(d)
+.. list-table:: Conditional PMF :math:`p(b\mid c,d{=}1)`
+   :header-rows: 1
+   :align: left
 
-   ==== ==== ==== ====
-   d    0    1    2
-   ==== ==== ==== ====
-   \    0.1  0.3  0.6
-   ==== ==== ==== ====
+   * - :math:`b\backslash c`
+     - 0
+     - 1
+   * - 0
+     - 0.7
+     - 0.3
+   * - 1
+     - 0.3
+     - 0.7
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-85
+.. _tab-pbcd-2:
+
+.. list-table:: Conditional PMF :math:`p(b\mid c,d{=}2)`
+   :header-rows: 1
+   :align: left
+
+   * - :math:`b\backslash c`
+     - 0
+     - 1
+   * - 0
+     - 0.9
+     - 0.2
+   * - 1
+     - 0.1
+     - 0.9
+
+.. _tab-ped:
+
+.. list-table:: Conditional PMF :math:`p(e\mid d)`
+   :header-rows: 1
+   :align: left
+
+   * - :math:`e\backslash d`
+     - 0
+     - 1
+     - 2
+   * - 0
+     - 0.1
+     - 0.7
+     - 0.0
+   * - 1
+     - 0.1
+     - 0.3
+     - 0.0
+   * - 2
+     - 0.2
+     - 0.0
+     - 0.0
+   * - 3
+     - 0.3
+     - 0.0
+     - 0.0
+   * - 4
+     - 0.3
+     - 0.0
+     - 1.0
+
+.. _tab-pc:
+
+.. list-table:: PMF :math:`p(c)`
+   :header-rows: 1
+   :align: left
+
+   * - :math:`c`
+     - :math:`p(c)`
+   * - 0
+     - 0.2
+   * - 1
+     - 0.8
+
+.. _tab-pd:
+
+.. list-table:: PMF :math:`p(d)`
+   :header-rows: 1
+   :align: left
+
+   * - :math:`d`
+     - :math:`p(d)`
+   * - 0
+     - 0.1
+   * - 1
+     - 0.3
+   * - 2
+     - 0.6
+
+.. GENERATED FROM PYTHON SOURCE LINES 175-177
 
 Import required packages
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-91
+.. GENERATED FROM PYTHON SOURCE LINES 177-184
 
 .. code-block:: Python
 
 
+    import time
     import numpy as np
     import plotly.graph_objects as go
     import rxMsgPassing.sumProduct
@@ -116,12 +210,12 @@ Import required packages
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-94
+.. GENERATED FROM PYTHON SOURCE LINES 185-187
 
 Define probability tables
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. GENERATED FROM PYTHON SOURCE LINES 94-114
+.. GENERATED FROM PYTHON SOURCE LINES 187-207
 
 .. code-block:: Python
 
@@ -152,12 +246,12 @@ Define probability tables
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 115-117
+.. GENERATED FROM PYTHON SOURCE LINES 208-210
 
 Create factor nodes
 ^^^^^^^^^^^^^^^^^^^
 
-.. GENERATED FROM PYTHON SOURCE LINES 117-144
+.. GENERATED FROM PYTHON SOURCE LINES 210-237
 
 .. code-block:: Python
 
@@ -195,12 +289,12 @@ Create factor nodes
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 145-147
+.. GENERATED FROM PYTHON SOURCE LINES 238-240
 
 Create variable nodes
 ^^^^^^^^^^^^^^^^^^^^^
 
-.. GENERATED FROM PYTHON SOURCE LINES 147-154
+.. GENERATED FROM PYTHON SOURCE LINES 240-247
 
 .. code-block:: Python
 
@@ -218,12 +312,12 @@ Create variable nodes
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 155-157
+.. GENERATED FROM PYTHON SOURCE LINES 248-250
 
 Link variable nodes to factor nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. GENERATED FROM PYTHON SOURCE LINES 157-164
+.. GENERATED FROM PYTHON SOURCE LINES 250-257
 
 .. code-block:: Python
 
@@ -241,12 +335,12 @@ Link variable nodes to factor nodes
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 165-167
+.. GENERATED FROM PYTHON SOURCE LINES 258-260
 
 Link factor nodes to variable nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. GENERATED FROM PYTHON SOURCE LINES 167-174
+.. GENERATED FROM PYTHON SOURCE LINES 260-267
 
 .. code-block:: Python
 
@@ -264,18 +358,21 @@ Link factor nodes to variable nodes
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 175-177
+.. GENERATED FROM PYTHON SOURCE LINES 268-270
 
 Compute marginal of a by message passing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. GENERATED FROM PYTHON SOURCE LINES 177-181
+.. GENERATED FROM PYTHON SOURCE LINES 270-277
 
 .. code-block:: Python
 
 
-    m_a = va.marginal()
-    print(f"message passing: p(a)={m_a}")
+    start_time = time.perf_counter()
+    mp_m_a = va.marginal()
+    mp_elapsed_time = time.perf_counter() - start_time 
+    print(f"message passing: p(a)={mp_m_a}")
+    print(f"message passing: elapsed_time={mp_elapsed_time}")
 
 
 
@@ -295,16 +392,17 @@ Compute marginal of a by message passing
     Computed msg from variable vb to factor f1: [0.374 0.626]
     Computed msg from factor f1 to variable va: [0.1496 0.1374 0.2748 0.4382]
     message passing: p(a)=[0.1496 0.1374 0.2748 0.4382]
+    message passing: elapsed_time=0.001883060671389103
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 182-184
+.. GENERATED FROM PYTHON SOURCE LINES 278-280
 
 Computer marginal of a by brute force
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. GENERATED FROM PYTHON SOURCE LINES 184-210
+.. GENERATED FROM PYTHON SOURCE LINES 280-312
 
 .. code-block:: Python
 
@@ -323,6 +421,8 @@ Computer marginal of a by brute force
                  peGd[tuple([e, d])].item()
         return answer
 
+    start_time = time.perf_counter()
+
     bf_m_a = [None] * len(domain_a)
     for i, a in enumerate(domain_a):
         total = 0.0
@@ -332,7 +432,11 @@ Computer marginal of a by brute force
                     for e in domain_e:
                         total += pabcde(a=a, b=b, c=c, d=d, e=e)
         bf_m_a[i] = total
+
+    bf_elapsed_time = time.perf_counter() - start_time
+
     print(f"brute force: p(a)={bf_m_a}")
+    print(f"brute force: elapsed_time={bf_elapsed_time}")
 
 
 
@@ -343,22 +447,23 @@ Computer marginal of a by brute force
  .. code-block:: none
 
     brute force: p(a)=[0.1496, 0.1374, 0.2748, 0.4381999999999999]
+    brute force: elapsed_time=0.0007959026843309402
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 211-213
+.. GENERATED FROM PYTHON SOURCE LINES 313-315
 
 Plot marginals computed by message passing and brute force
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. GENERATED FROM PYTHON SOURCE LINES 213-223
+.. GENERATED FROM PYTHON SOURCE LINES 315-325
 
 .. code-block:: Python
 
 
     fig = go.Figure()
-    trace = go.Bar(y=m_a, name="Message Passing")
+    trace = go.Bar(y=mp_m_a, name="Message Passing")
     fig.add_trace(trace)
     trace = go.Bar(y=bf_m_a, name="Brute Force")
     fig.add_trace(trace)
@@ -375,25 +480,25 @@ Plot marginals computed by message passing and brute force
 
     <div class="output_subarea output_html rendered_html output_result">
     <div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-            <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.1.1.min.js" integrity="sha256-HUEFyfiTnZJxCxur99FjbKYTvKSzwDaD3/x5TqHpFu4=" crossorigin="anonymous"></script>                <div id="1fd0fb90-8f8e-4029-975d-1cb8b61eacad" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("1fd0fb90-8f8e-4029-975d-1cb8b61eacad")) {                    Plotly.newPlot(                        "1fd0fb90-8f8e-4029-975d-1cb8b61eacad",                        [{"name":"Message Passing","y":{"dtype":"f8","bdata":"EqW9wRcmwz8SNjy9UpbBPxI2PL1SltE\u002fXdxGA3gL3D8="},"type":"bar"},{"name":"Brute Force","y":[0.1496,0.1374,0.2748,0.4381999999999999],"type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"title":{"text":"x"}},"yaxis":{"title":{"text":"p(a=x)"}}},                        {"responsive": true}                    )                };            </script>        </div>
+            <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.1.1.min.js" integrity="sha256-HUEFyfiTnZJxCxur99FjbKYTvKSzwDaD3/x5TqHpFu4=" crossorigin="anonymous"></script>                <div id="bab1881a-87e2-4f41-9061-94899ca456cd" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("bab1881a-87e2-4f41-9061-94899ca456cd")) {                    Plotly.newPlot(                        "bab1881a-87e2-4f41-9061-94899ca456cd",                        [{"name":"Message Passing","y":{"dtype":"f8","bdata":"EqW9wRcmwz8SNjy9UpbBPxI2PL1SltE\u002fXdxGA3gL3D8="},"type":"bar"},{"name":"Brute Force","y":[0.1496,0.1374,0.2748,0.4381999999999999],"type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"title":{"text":"x"}},"yaxis":{"title":{"text":"p(a=x)"}}},                        {"responsive": true}                    )                };            </script>        </div>
     </div>
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 224-226
+.. GENERATED FROM PYTHON SOURCE LINES 326-328
 
 Test agreement between message passing and brute force marginals
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. GENERATED FROM PYTHON SOURCE LINES 226-235
+.. GENERATED FROM PYTHON SOURCE LINES 328-337
 
 .. code-block:: Python
 
 
     tol = 1e-6
 
-    for i in range(len(m_a)):
-        if abs(m_a[i] - bf_m_a[i]) < tol:
+    for i in range(len(mp_m_a)):
+        if abs(mp_m_a[i] - bf_m_a[i]) < tol:
             print(f"Agreement in component {i}")
         else:
             print(f"Disagreement in component {i}")
@@ -417,7 +522,7 @@ Test agreement between message passing and brute force marginals
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.251 seconds)
+   **Total running time of the script:** (0 minutes 3.273 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_sumProduct.py:

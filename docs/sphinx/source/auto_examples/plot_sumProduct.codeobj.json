@@ -17,6 +17,15 @@
    "name": "int64"
   }
  ],
+ "bf_elapsed_time": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "float"
+  }
+ ],
  "bf_m_a": [
   {
    "is_class": false,
@@ -607,7 +616,16 @@
    "name": "int"
   }
  ],
- "m_a": [
+ "mp_elapsed_time": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "float"
+  }
+ ],
+ "mp_m_a": [
   {
    "is_class": false,
    "is_explicit": false,
@@ -773,6 +791,31 @@
    "module": "rxMsgPassing.sumProduct",
    "module_short": "rxMsgPassing.sumProduct",
    "name": "VariableNode"
+  }
+ ],
+ "start_time": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "float"
+  }
+ ],
+ "time.perf_counter": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "time",
+   "module_short": "time",
+   "name": "perf_counter"
   }
  ],
  "tol": [

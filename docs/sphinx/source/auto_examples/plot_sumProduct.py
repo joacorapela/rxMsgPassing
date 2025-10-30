@@ -4,85 +4,178 @@
 Example in Figure 5.3 of `David Barber's book Bayesian Reasoning and Machine Learning <http://web4.cs.ucl.ac.uk/staff/D.Barber/textbook/090310.pdf>`_
 =====================================================================================================================================================
 
-Calculate the marginal probability mass function p(a) from the joint pmf
-represented in the figure below, with the conditional pmf given in the
-following tables.
+
+**Task.** Compute the marginal PMF :math:`p(a)` for the model
+
+.. math::
+
+   p(a,b,c,d,e) \;=\; p(a\mid b)\; p(b\mid c,d)\; p(e\mid d)\; p(c)\; p(d).
+
+Use the factor graph in :numref:`fig-brml-53` and the factor tables in
+:numref:`tab-var-dim`–:numref:`tab-pd`. Report a normalized :math:`p(a)`.
+
+.. _fig-brml-53:
 
 .. figure:: /images/fig5_3_BRML.png
-   :width: 800
-   :alt: fig 5.3 BRML
+   :width: 100%
+   :alt: Factor graph for variables a, b, c, d, e (BRML Fig. 5.3)
 
-   p(a,b,c,d,e)=p(a|b) p(b|c,d) p(e|d) p(c) p(d)
+   Factor graph for the model.
 
-.. table:: Variable's dimensions
+.. _tab-var-dim:
 
-   ==== ====
-   Var  Dim
-   ==== ====
-   a    4
-   b    2
-   c    2
-   d    3
-   e    5
-   ==== ====
+.. list-table:: Variable dimensions
+   :header-rows: 1
+   :align: left
 
-.. table:: p(a|b)
+   * - Var
+     - Dim
+   * - a
+     - 4
+   * - b
+     - 2
+   * - c
+     - 2
+   * - d
+     - 3
+   * - e
+     - 5
 
-   ==== ==== ====
-   a\\\\b  0    1
-   ==== ==== ====
-   0    0.4  0.0
-   1    0.2  0.1
-   2    0.4  0.2
-   3    0.0  0.7
-   ==== ==== ====
+.. _tab-pab:
 
-.. table:: p(b|c,d)
+.. list-table:: Conditional PMF :math:`p(a\mid b)`
+   :header-rows: 1
+   :align: left
 
-   +--------+-----+-----+-----+-----+-----+-----+
-   | b\\\\c   |  0  |  1  |  0  |  1  |  0  |  1  |
-   +========+=====+=====+=====+=====+=====+=====+
-   | 0      | 0.8 | 0.5 | 0.7 | 0.3 | 0.9 | 0.2 |
-   +--------+-----+-----+-----+-----+-----+-----+
-   | 1      | 0.2 | 0.5 | 0.3 | 0.7 | 0.1 | 0.9 |
-   +--------+-----+-----+-----+-----+-----+-----+
-   | d      | 0   | 0   | 1   | 1   | 2   | 2   |
-   +--------+-----+-----+-----+-----+-----+-----+
+   * - :math:`a\\backslash b`
+     - 0
+     - 1
+   * - 0
+     - 0.4
+     - 0.0
+   * - 1
+     - 0.2
+     - 0.1
+   * - 2
+     - 0.4
+     - 0.2
+   * - 3
+     - 0.0
+     - 0.7
 
-.. table:: p(e|d)
+.. _tab-pbcd-0:
 
-   ==== ==== ==== ====
-   e\\\\d  0    1    2
-   ==== ==== ==== ====
-   0    0.1  0.7  0.0
-   1    0.1  0.3  0.0
-   2    0.2  0.0  0.0
-   3    0.3  0.0  0.0
-   4    0.3  0.0  1.0
-   ==== ==== ==== ====
+.. list-table:: Conditional PMF :math:`p(b\mid c,d{=}0)`
+   :header-rows: 1
+   :align: left
 
-.. table:: p(c)
+   * - :math:`b\\backslash c`
+     - 0
+     - 1
+   * - 0
+     - 0.8
+     - 0.5
+   * - 1
+     - 0.2
+     - 0.5
 
-   ==== ==== ====
-   c    0    1
-   ==== ==== ====
-   \    0.2  0.8
-   ==== ==== ====
+.. _tab-pbcd-1:
 
-.. table:: p(d)
+.. list-table:: Conditional PMF :math:`p(b\mid c,d{=}1)`
+   :header-rows: 1
+   :align: left
 
-   ==== ==== ==== ====
-   d    0    1    2
-   ==== ==== ==== ====
-   \    0.1  0.3  0.6
-   ==== ==== ==== ====
+   * - :math:`b\\backslash c`
+     - 0
+     - 1
+   * - 0
+     - 0.7
+     - 0.3
+   * - 1
+     - 0.3
+     - 0.7
 
+.. _tab-pbcd-2:
+
+.. list-table:: Conditional PMF :math:`p(b\mid c,d{=}2)`
+   :header-rows: 1
+   :align: left
+
+   * - :math:`b\\backslash c`
+     - 0
+     - 1
+   * - 0
+     - 0.9
+     - 0.2
+   * - 1
+     - 0.1
+     - 0.9
+
+.. _tab-ped:
+
+.. list-table:: Conditional PMF :math:`p(e\mid d)`
+   :header-rows: 1
+   :align: left
+
+   * - :math:`e\\backslash d`
+     - 0
+     - 1
+     - 2
+   * - 0
+     - 0.1
+     - 0.7
+     - 0.0
+   * - 1
+     - 0.1
+     - 0.3
+     - 0.0
+   * - 2
+     - 0.2
+     - 0.0
+     - 0.0
+   * - 3
+     - 0.3
+     - 0.0
+     - 0.0
+   * - 4
+     - 0.3
+     - 0.0
+     - 1.0
+
+.. _tab-pc:
+
+.. list-table:: PMF :math:`p(c)`
+   :header-rows: 1
+   :align: left
+
+   * - :math:`c`
+     - :math:`p(c)`
+   * - 0
+     - 0.2
+   * - 1
+     - 0.8
+
+.. _tab-pd:
+
+.. list-table:: PMF :math:`p(d)`
+   :header-rows: 1
+   :align: left
+
+   * - :math:`d`
+     - :math:`p(d)`
+   * - 0
+     - 0.1
+   * - 1
+     - 0.3
+   * - 2
+     - 0.6
 """
 
 #%%
 # Import required packages
 # ^^^^^^^^^^^^^^^^^^^^^^^^
 
+import time
 import numpy as np
 import plotly.graph_objects as go
 import rxMsgPassing.sumProduct
@@ -175,8 +268,11 @@ ve.neighbors = [f4]
 # Compute marginal of a by message passing
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-m_a = va.marginal()
-print(f"message passing: p(a)={m_a}")
+start_time = time.perf_counter()
+mp_m_a = va.marginal()
+mp_elapsed_time = time.perf_counter() - start_time 
+print(f"message passing: p(a)={mp_m_a}")
+print(f"message passing: elapsed_time={mp_elapsed_time}")
 
 #%%
 # Computer marginal of a by brute force
@@ -196,6 +292,8 @@ def pabcde(a, b, c, d, e):
              peGd[tuple([e, d])].item()
     return answer
 
+start_time = time.perf_counter()
+
 bf_m_a = [None] * len(domain_a)
 for i, a in enumerate(domain_a):
     total = 0.0
@@ -205,14 +303,18 @@ for i, a in enumerate(domain_a):
                 for e in domain_e:
                     total += pabcde(a=a, b=b, c=c, d=d, e=e)
     bf_m_a[i] = total
+
+bf_elapsed_time = time.perf_counter() - start_time
+
 print(f"brute force: p(a)={bf_m_a}")
+print(f"brute force: elapsed_time={bf_elapsed_time}")
 
 #%%
 # Plot marginals computed by message passing and brute force
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 fig = go.Figure()
-trace = go.Bar(y=m_a, name="Message Passing")
+trace = go.Bar(y=mp_m_a, name="Message Passing")
 fig.add_trace(trace)
 trace = go.Bar(y=bf_m_a, name="Brute Force")
 fig.add_trace(trace)
@@ -226,8 +328,8 @@ fig
 
 tol = 1e-6
 
-for i in range(len(m_a)):
-    if abs(m_a[i] - bf_m_a[i]) < tol:
+for i in range(len(mp_m_a)):
+    if abs(mp_m_a[i] - bf_m_a[i]) < tol:
         print(f"Agreement in component {i}")
     else:
         print(f"Disagreement in component {i}")

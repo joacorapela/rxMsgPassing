@@ -14,7 +14,7 @@ Reactive Message Passing Examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Calculate the marginal probability mass function p(a) from the joint pmf represented in the figure below, with the conditional pmf given in the following tables.">
+    <div class="sphx-glr-thumbcontainer" tooltip=" Task. Compute the marginal PMF p(a) for the model">
 
 .. only:: html
 
