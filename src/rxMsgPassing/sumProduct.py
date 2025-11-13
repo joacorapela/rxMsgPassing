@@ -42,10 +42,11 @@ class VariableNode:
         return marginal
 
 class FactorNode:
-    def __init__(self, name, probabilities, var_names):
+    def __init__(self, name, probabilities, var_names, conditional=None):
         self._name = name
         self._probabilities = probabilities
         self._var_names = var_names
+        self._conditional = conditional
         self._msgs = {}
 
     @property
@@ -79,8 +80,8 @@ class FactorNode:
                 in_msgs_names.append(neighbor.name)
                 in_msgs_domains.append([i for i in range(len(in_msg))])
 
-        # generate output message (tricky due to the nested loop of
-        # arbitrary depth)
+        # generate output message
+        # tricky due to the nested loop of arbitrary depth
         out_msg = np.ones(self.cardinality(var_name), dtype=np.double)
         var_names_values = list(range(len(out_msg)))
         dict_keys = [var_name] + in_msgs_names
@@ -106,9 +107,17 @@ class FactorNode:
         return out_msg
 
     def _get_prob_value(self, vars_dict):
+        conditional_factor = 1.0
         indices = [None] * len(self._var_names)
         for i in range(len(indices)):
             var_name = self._var_names[i]
             indices[i] = vars_dict[var_name]
-        prob_value = self._probabilities[tuple(indices)]
-        return prob_value
+            if self._conditional is not None and var_name in self._conditional:
+                if self._conditional[var_name] != vars_dict[var_name]:
+                    conditional_factor = 0.0
+                    break
+        if conditional_factor == 0.0:
+            return 0.0
+        else:
+            prob_value = self._probabilities[tuple(indices)] * conditional_factor
+            return prob_value
