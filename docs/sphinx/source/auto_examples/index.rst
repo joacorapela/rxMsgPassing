@@ -25,7 +25,7 @@ Reactive Message Passing Examples
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Example of calculation of conditional probability mass function. Based in Figure 5.3 of David Barber's book Bayesian Reasoning and Machine Learning</div>
+      <div class="sphx-glr-thumbnail-title">Example of calculation of conditional probability mass function. Based on Figure 5.3 of David Barber's book Bayesian Reasoning and Machine Learning</div>
     </div>
 
 
@@ -42,7 +42,7 @@ Reactive Message Passing Examples
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Example of calculation of marginal probability mass function. Based in Figure 5.3 of David Barber's book Bayesian Reasoning and Machine Learning</div>
+      <div class="sphx-glr-thumbnail-title">Example of calculation of marginal probability mass function. Based on Figure 5.3 of David Barber's book Bayesian Reasoning and Machine Learning</div>
     </div>
 
 

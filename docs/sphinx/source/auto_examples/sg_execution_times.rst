@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:03.585** total execution time for 2 files **from auto_examples**:
+**00:03.255** total execution time for 2 files **from auto_examples**:
 
 .. container::
 
@@ -33,8 +33,8 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_auto_examples_plot_sumProduct_marginalAgivenB1.py` (``plot_sumProduct_marginalAgivenB1.py``)
-     - 00:03.549
+     - 00:03.218
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plot_sumProduct_marginalA.py` (``plot_sumProduct_marginalA.py``)
-     - 00:00.036
+     - 00:00.037
      - 0.0
