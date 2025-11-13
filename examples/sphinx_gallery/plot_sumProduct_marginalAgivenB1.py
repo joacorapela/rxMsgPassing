@@ -1,9 +1,8 @@
 
 
 """
-Based on example in Figure 5.3 of `David Barber's book Bayesian Reasoning and Machine Learning <http://web4.cs.ucl.ac.uk/staff/D.Barber/textbook/090310.pdf>`_
-==============================================================================================================================================================
-
+Example of calculation of conditional probability mass function. Based in Figure 5.3 of `David Barber's book Bayesian Reasoning and Machine Learning <http://web4.cs.ucl.ac.uk/staff/D.Barber/textbook/090310.pdf>`_
+====================================================================================================================================================================================================================
 
 **Task.** Compute the marginal PMF :math:`p(a|b=1)` for the model
 
