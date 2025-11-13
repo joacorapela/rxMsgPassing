@@ -14,18 +14,35 @@ Reactive Message Passing Examples
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Task. Compute the marginal PMF p(a|b=1) for the model">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_sumProduct_marginalAgivenB1_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_plot_sumProduct_marginalAgivenB1.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Example of calculation of conditional probability mass function. Based in Figure 5.3 of David Barber's book Bayesian Reasoning and Machine Learning</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip=" Task. Compute the marginal PMF p(a) for the model">
 
 .. only:: html
 
-  .. image:: /auto_examples/images/thumb/sphx_glr_plot_sumProduct_thumb.png
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_sumProduct_marginalA_thumb.png
     :alt:
 
-  :ref:`sphx_glr_auto_examples_plot_sumProduct.py`
+  :ref:`sphx_glr_auto_examples_plot_sumProduct_marginalA.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Example in Figure 5.3 of David Barber's book Bayesian Reasoning and Machine Learning</div>
+      <div class="sphx-glr-thumbnail-title">Example of calculation of marginal probability mass function. Based in Figure 5.3 of David Barber's book Bayesian Reasoning and Machine Learning</div>
     </div>
 
 
@@ -39,7 +56,8 @@ Reactive Message Passing Examples
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_sumProduct
+   /auto_examples/plot_sumProduct_marginalAgivenB1
+   /auto_examples/plot_sumProduct_marginalA
 
 
 .. only:: html
